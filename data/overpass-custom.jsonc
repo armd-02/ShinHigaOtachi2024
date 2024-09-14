@@ -1,0 +1,31 @@
+{
+    "osm": {
+        "ShinHiga2024": {
+            "overpass": [
+                "node[\"amenity\"]",
+                "way[\"amenity\"]",
+                "node[\"shop\"]",
+                "way[\"shop\"]",
+                "node[\"tourism\"]",
+                "way[\"tourism\"]",
+                "node[\"railway\"=\"station\"]"
+            ],
+            "tags": [
+                "shop",
+                "amenity!=parking",
+                "amenity",
+                "tourism",
+                "railway"
+            ],
+            "expression": {
+                "stroke": "#A06060",
+                "stroke-width": 1
+            },
+            "titles": [
+                "name",
+                "operator",
+                "note"
+            ]
+        }
+    }
+}

@@ -1,0 +1,81 @@
+{
+    "activities": {
+        "ShinHiga2024": {
+            "header": "",
+            "footer": "",
+            "form": {
+                "category": {
+                    "glot": "act_category",
+                    "type": "select",
+                    "category": [
+                        "アート",
+                        "メニュー",
+                        "イベント"
+                    ],
+                    "viewHidden": true,
+                    "gsheet": "category"
+                },
+                "title": {
+                    "glot": "act_title",
+                    "type": "text",
+                    "gsheet": "title"
+                },
+                "memo": {
+                    "glot": "act_memo",
+                    "type": "textarea",
+                    "gsheet": "memo"
+                },
+                "actor": {
+                    "glot": "act_actor",
+                    "type": "textarea",
+                    "gsheet": "actor"
+                },
+                "genre":{
+                    "glot": "act_genre",
+                    "type": "text",
+                    "gsheet": "genre"
+                },
+                "datetime": {
+                    "glot": "act_datetime",
+                    "type": "textarea",
+                    "gsheet": "datetime"
+                },
+                "enter": {
+                    "glot": "act_enter",
+                    "type": "textarea",
+                    "gsheet": "enter"
+                },
+                "fee": {
+                    "glot": "act_fee",
+                    "type": "text",
+                    "gsheet": "fee"
+                },
+                "reserve": {
+                    "glot": "act_reserve",
+                    "type": "text",
+                    "gsheet": "reserve"
+                },
+                "detail_url": {
+                    "glot": "act_detail_url",
+                    "type": "url",
+                    "gsheet": "detail_url"
+                },
+                "picture_url1": {
+                    "glot": "act_picture_url1",
+                    "type": "image_url",
+                    "gsheet": "picture_url1"
+                },
+                "picture_url2": {
+                    "glot": "act_picture_url2",
+                    "type": "image_url",
+                    "gsheet": "picture_url2"
+                },
+                "picture_url3": {
+                    "glot": "act_picture_url3",
+                    "type": "image_url",
+                    "gsheet": "picture_url3"
+                }
+            }
+        }
+    }
+}
