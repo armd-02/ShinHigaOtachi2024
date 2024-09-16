@@ -13,6 +13,9 @@
             "tags": [
                 "shop",
                 "amenity!=parking",
+                "amenity!=vending_machine",
+                "amenity!=parking_entrance",
+                "amenity!=bench",
                 "amenity",
                 "tourism",
                 "railway"

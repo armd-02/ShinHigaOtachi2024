@@ -25,7 +25,8 @@
             "poi_fields": [
                 "id",
                 "#category",
-                "name"
+                "name",
+                "#category"
             ],
             // #category:tagから計算したカテゴリ / #tag名:指定したOSM tag名 / datetime:日付(変換付き)
             // フィールド名:データベースのフィールド名 / フィールド名.date:日付変換付き

@@ -73,16 +73,20 @@ window.addEventListener("DOMContentLoaded", function () {
 				}
 				let eventMoveMap = cMapMaker.eventMoveMap.bind(cMapMaker)
 				eventMoveMap().then(() => {
-					winCont.splash(false);
-					if (location.search !== "") {    							// 引数がある場合
-						let search = location.search.replace(/[?&]fbclid.*/, '').replace(/%2F/g, '/');  // facebook対策
-						search = search.replace('-', '/').replace('=', '/').slice(1);
-						search = search.slice(-1) == "/" ? search.slice(0, -1) : search;				// facebook対策(/が挿入される)
-						let params = search.split('&');	// -= -> / and split param
-						history.replaceState('', '', location.pathname + "?" + search + location.hash);
+					winCont.splash(false)
+					if (location.search !== "") {    													// 引数がある場合
+						let search = location.search.replace(/[?&]fbclid.*/, '').replace(/%2F/g, '/').slice(1)  	// facebook対策
+						//search = search.replace('-', '/').replace('=', '/').slice(1)
+						search = search.slice(-1) == "/" ? search.slice(0, -1) : search					// facebook対策(/が挿入される)
+						let params = search.split('&')													// -= -> / and split param
+						history.replaceState('', '', location.pathname + "?" + search + location.hash)
 						for (const param of params) {
-							let keyv = param.split('/');
+							let delimiter = param.includes('=') ? '=' : '/'
+							let keyv = param.split(delimiter)
 							switch (keyv[0]) {
+								case "edit":
+
+									break
 								case "category":
 									if (Conf.selectItem.menu == "") {	// listTableリンク時
 										listTable.selectCategory(keyv[1])
@@ -109,7 +113,7 @@ window.addEventListener("DOMContentLoaded", function () {
 			let osmids = poiCont.pois().acts.map(act => { return act.osmid })
 			osmids = osmids.filter(Boolean)
 			if (osmids.length > 0 && !Conf.static.mode) {
-				basic.retry(() => overPassCont.getOsmIds(osmids),5).then(geojson => {
+				basic.retry(() => overPassCont.getOsmIds(osmids), 5).then(geojson => {
 					poiCont.addGeojson(geojson)
 					poiCont.setActlnglat()
 					init_close()
