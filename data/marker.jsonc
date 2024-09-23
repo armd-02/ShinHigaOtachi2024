@@ -105,7 +105,8 @@
                 "carpenter": "anvil_and_hammer.svg",
                 "confectionery": "confectionery.svg",
                 "lighting": "bulb-light.svg",
-                "photographer": "attraction.svg"
+                "photographer": "attraction.svg",
+                "yes": "tools.svg"
             },
             "diplomatic": {
                 "embassy": "diplomatic.svg"
@@ -166,6 +167,7 @@
                 "hairdresser": "hairdresser.svg",
                 "hardware": "tools.svg",
                 "health_food": "shop.svg",
+                "houseware": "blender-solid.svg",
                 "ice_cream": "ice-cream.svg",
                 "interior_decoration": "interior_decoration.svg",
                 "jewelry": "jewelry-store.svg",

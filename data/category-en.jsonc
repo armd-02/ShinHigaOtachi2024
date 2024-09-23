@@ -104,7 +104,8 @@
             "carpenter": "carpenter",
             "confectionery": "confectionery",
             "lighting": "craft lighting",
-            "photographer": "photographer"
+            "photographer": "photographer",
+            "yes": "craft"
         },
         "diplomatic": {
             "embassy": "embassy"
@@ -165,6 +166,7 @@
             "hairdresser": "hairdresser",
             "hardware": "hardware",
             "health_food": "health food",
+            "houseware": "houseware",
             "ice_cream": "ice cream",
             "interior_decoration": "interior decoration",
             "jewelry": "jewelry store",
@@ -193,7 +195,7 @@
             "tobacco": "pipe",
             "travel_agency": "travel agency",
             "variety_store": "variety",
-            "video_games":"video games",
+            "video_games": "video games",
             "water": "water",
             "watches": "watches",
             "wine": "wine"
@@ -272,7 +274,7 @@
             "artwork": "artwork",
             "gallery": "gallery",
             "guest_house": "guest house",
-            "hostel":"hostel",
+            "hostel": "hostel",
             "hotel": "hotel",
             "information": "information",
             "museum": "museum",

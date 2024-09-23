@@ -57,8 +57,10 @@ class modal_OSMbasic {
         let instagram = [tags.instagram, tags["contact:instagram"]].filter(a => a !== undefined)[0]
         if (instagram !== undefined) {
             instagram = this.getInstagramProfileUrl(instagram)
-            html += `<div class="flex-row"> <i class="fa-brands fa-instagram"></i> <a href="${instagram[0]}" target="_blank">${instagram[1]}</a></div>`
-            elements++
+            if (instagram !== null) {
+                html += `<div class="flex-row"> <i class="fa-brands fa-instagram"></i> <a href="${instagram[0]}" target="_blank">${instagram[1]}</a></div>`
+                elements++
+            }
         }
 
         // write tel

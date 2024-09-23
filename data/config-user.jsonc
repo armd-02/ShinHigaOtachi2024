@@ -24,17 +24,19 @@
         "modalZoom": 19 // モーダルダイアログ表示時のズームサイズ   
     },
     "view": {
-        "poiZoom": {
-            // アイコンの前後位置は後ろの方が手前になる
-            "ShinHiga2024": 16,
-            "activity": 8
+        "poiZoom": { // アイコンの前後位置は後ろの方が手前になる
+            "activity": 8,
+            "Green": 15.5
         },
-        "poiFilter": "filter" // listTable更新時 all:全て / filter:絞り込み / "":非連動
+        "poiFilter": "filter", // listTable更新時 all:全て / filter:絞り込み / "":非連動
+        "editZoom": { // 編集時に追加するpoiZoom
+            "ShinHigaOtachi2024": 14
+        }
     },
     "etc": {
-        "editMode": true, // 編集メニューの表示/非表示
+        "editMode": false, // 編集メニューの表示/非表示
         "thumbnailWidth": "240",
-        "splashUrl": "./image/higashi_mikuni.jpeg"
+        "splashUrl": "./image/higashi_mikuni.jpg"
     },
     "selectItem": { // 選択リストの内容を手動記載 / 空の時は "" とする
         "menu": "",
@@ -51,7 +53,7 @@
         "action": "" // ChangeMap:背景地図切り替え
     },
     "listTable": {
-        "category": "tags", // カテゴリ選択 / activity:アクティビティリスト / tags:タグ
+        "category": "activity", // カテゴリ選択 / activity:アクティビティリスト / tags:タグ
         "target": "tags", // target名:overpass名を表示 / activity:google sheetsを表示 / tags:osm poi種別名を表示
         "allActs": true, // true: 全てのactivityを常に表示 / false: 画面内のActivityのみ表示
         "playback": {
@@ -60,13 +62,6 @@
             "timer": 4000
         },
         "download": false
-    },
-    "PoiView": {
-        "targets": [
-            "ShinHiga2024",
-            "activity"
-        ],
-        "update_mode": "filter" // listTable更新時 all:全て / filter:絞り込み / "":非連動
     },
     "google": {
         "Analytics": "",
@@ -104,11 +99,6 @@
                 "divider": false
             },
             {
-                "glot-model": "develop_site",
-                "linkto": "https://github.com/armd-02/Playgrounds",
-                "divider": false
-            },
-            {
                 "glot-model": "openstreetmap",
                 "linkto": "https://www.openstreetmap.org/about",
                 "divider": false
@@ -118,7 +108,7 @@
         "modal": [
             {
                 "glot-model": "act_add",
-                "linkto": "javascript:modal_activities.edit({form:'Playgrounds'})",
+                "linkto": "javascript:modalActs.edit()",
                 "divider": false
             },
             {
@@ -128,7 +118,7 @@
             },
             {
                 "glot-model": "button_close",
-                "linkto": "javascript:winCont.modal_close()",
+                "linkto": "javascript:winCont.closeModal()",
                 "divider": false
             }
         ],
@@ -136,9 +126,10 @@
         "buttons": [
             {
                 "btn_class": "btn btn-light border-secondary me-2",
-                "code": "javascript:modal_activities.edit({form:'Playgrounds'})",
+                "code": "javascript:modalActs.edit()",
                 "icon_class": "fas fa-plus",
-                "btn_glot_name": "add_activity"
+                "btn_glot_name": "add_activity",
+                "editMode": true
             },
             {
                 "btn_class": "btn btn-light border-secondary",

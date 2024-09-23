@@ -104,7 +104,8 @@
             "carpenter": "工務店",
             "confectionery": "菓子工房",
             "lighting": "照明工房",
-            "photographer": "写真館"
+            "photographer": "写真館",
+            "yes": "工房"
         },
         "diplomatic": {
             "embassy": "大使館"
@@ -165,6 +166,7 @@
             "hairdresser": "美容院",
             "hardware": "金物店",
             "health_food": "健康食品店",
+            "houseware": "家庭用品店",
             "ice_cream": "アイスクリーム店",
             "interior_decoration": "内装用品",
             "jewelry": "宝飾店",

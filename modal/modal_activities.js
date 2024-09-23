@@ -45,7 +45,7 @@ class modal_Activities {
                         case "quiz_choice":
                             if (key !== "quiz_answer" && key !== "title" && gdata !== "") {
                                 gdata = basic.autoLink(gdata)
-                                chtml += `<div class='col-12'><span class="font-weight-bold">${glot.get(form[key].glot)}</span>${gdata.replace(/\r?\n/g, '<br>')}</div>`;
+                                chtml += `<div class='col-12'><span class="fw-bold">${glot.get(form[key].glot)}</span>${gdata.replace(/\r?\n/g, '<br>')}</div>`;
                             }
                             break
                         case "quiz_textarea":
@@ -53,7 +53,7 @@ class modal_Activities {
                             break;
                         case "url":
                             if (gdata !== "http://" && gdata !== "https://" && gdata !== "") {
-                                chtml += `<div class='col-12'><span class="font-weight-bold">${glot.get(form[key].glot)}</span><a href="${gdata}">${gdata}</a></div>`;
+                                chtml += `<div class='col-12'><span class="fw-bold">${glot.get(form[key].glot)}</span><a href="${gdata}">${gdata}</a></div>`;
                             }
                             break
                         case "image_url":
@@ -61,9 +61,9 @@ class modal_Activities {
                                 if (gdata.slice(0, 5) == "File:") {  // Wikimedia Commons
                                     let id = act.id.replace("/", "") + "_" + key;
                                     wikimq.push([gdata, id]);
-                                    chtml += `<div class="col-12 text-center"><img class="thumbnail" onclick="modal_activities.viewImage(this)" id="${id}"><span id="${id}-copyright"></span></div>`;
+                                    chtml += `<div class="col-12 text-center"><img class="thumbnail" onclick="modalActs.viewImage(this)" id="${id}"><span id="${id}-copyright"></span></div>`;
                                 } else {
-                                    chtml += `<div class="col-12 text-center"><img class="thumbnail" onclick="modal_activities.viewImage(this)" src="${gdata}"></div>`;
+                                    chtml += `<div class="col-12 text-center"><img class="thumbnail" onclick="modalActs.viewImage(this)" src="${gdata}"></div>`;
                                 }
                             }
                             break
@@ -77,37 +77,39 @@ class modal_Activities {
         }
         template.innerHTML = this.html;
         actlists.sort((a, b) => { return a.updatetime < b.updatetime ? -1 : 1 });   // sort by update.
-        result = modal_activities.make_activity_list(actlists);
+        result = modalActs.makeActivityList(actlists);
         actlists.forEach((act, idx) => {
-            let clone = template.querySelector("div.body").cloneNode(true);
-            let head = clone.querySelector("h5");
-            let body = clone.querySelector("div.p-1");
-            let updated = basic.formatDate(new Date(act.updatetime), ymd);
-            newmode = act.id.split('/')[0];
-            let form = Conf.activities[newmode].form;
-            head.innerHTML = act.title + ` <button type="button" class="btn-sm btn-light me-1 ps-2 pe-2 pt-0 pb-0" onclick="cMapMaker.shareURL('${act.id}')">
-            <i class="fas fa-clone"></i></button>`;
-            head.setAttribute("id", act.id.replace("/", ""));
-            let edit = Conf.etc.editMode ? `[<a href="javascript:modal_activities.edit({id:'${act.id}',form:'${newmode}'})">${glot.get("act_edit")}</a>]` : "";
-            let chtml = Conf.etc.editMode ? `<div class="float-right">${glot.get("update")} ${updated}${edit}</div><br>` : "";
-            switch (newmode) {
-                case "libc":
-                    let mm = !parseInt(act.mm) ? "--" : ("00" + act.mm).substr(-2);
-                    let dd = !parseInt(act.dd) ? "--" : ("00" + act.dd).substr(-2);
-                    let act_ymd = `${act.yyyy}/${mm}/${dd}`;
-                    clone.querySelector("span").innerHTML = act_ymd + " " + act.title;
-                    chtml += `<strong>${glot.get("libc_title")}</strong><br>${act_ymd} ${act.title}<br><br>`;
-                    chtml += "<strong>" + glot.get("libc_agency") + "</strong><br>" + act.agency + "<br><br>";
-                    chtml += "<strong>" + glot.get("libc_authority") + "</strong><br>" + act.authority.replace(/\r?\n/g, '<br>') + "<br><br>";
-                    chtml += "<strong>" + glot.get("libc_area") + "</strong><br>" + act.area + "<br><br>";
-                    chtml += "<strong>" + glot.get("libc_ymd") + `</strong><br>${act_ymd}<br><br>`;
-                    break;
-                default:    // event
-                    chtml += makehtml(form, act)
-                    break;
-            };
-            body.innerHTML = chtml;
-            result += clone.outerHTML;
+            if (act.id !== "") {
+                let clone = template.querySelector("div.body").cloneNode(true);
+                let head = clone.querySelector("h5");
+                let body = clone.querySelector("div.p-1");
+                let updated = basic.formatDate(new Date(act.updatetime), ymd);
+                newmode = act.id.split('/')[0];
+                let form = Conf.activities[newmode].form;
+                head.innerHTML = act.title + ` <button type="button" class="btn btn-sm me-1 ps-1 pe-2 pt-0 pb-0" onclick="cMapMaker.shareURL('${act.id}')">
+             <i class="fa-solid fa-clone text-secondary;"></i></button>`;
+                head.setAttribute("id", act.id.replace("/", ""));
+                let edit = Conf.etc.editMode ? `[<a href="javascript:modalActs.edit({id:'${act.id}',form:'${newmode}'})">${glot.get("act_edit")}</a>]` : "";
+                let chtml = Conf.etc.editMode ? `<div class="float-end">${glot.get("update")} ${updated}${edit}</div><br>` : "";
+                switch (newmode) {
+                    case "libc":
+                        let mm = !parseInt(act.mm) ? "--" : ("00" + act.mm).substr(-2);
+                        let dd = !parseInt(act.dd) ? "--" : ("00" + act.dd).substr(-2);
+                        let act_ymd = `${act.yyyy}/${mm}/${dd}`;
+                        clone.querySelector("span").innerHTML = act_ymd + " " + act.title;
+                        chtml += `<strong>${glot.get("libc_title")}</strong><br>${act_ymd} ${act.title}<br><br>`;
+                        chtml += "<strong>" + glot.get("libc_agency") + "</strong><br>" + act.agency + "<br><br>";
+                        chtml += "<strong>" + glot.get("libc_authority") + "</strong><br>" + act.authority.replace(/\r?\n/g, '<br>') + "<br><br>";
+                        chtml += "<strong>" + glot.get("libc_area") + "</strong><br>" + act.area + "<br><br>";
+                        chtml += "<strong>" + glot.get("libc_ymd") + `</strong><br>${act_ymd}<br><br>`;
+                        break;
+                    default:    // event
+                        chtml += makehtml(form, act)
+                        break;
+                };
+                body.innerHTML = chtml;
+                result += clone.outerHTML;
+            }
         });
         wikimq.forEach(q => { basic.getWikiMediaImage(q[0], Conf.etc.thumbnailWidth, q[1]) });        // WikiMedia Image 遅延読み込み
         tModal.remove();
@@ -116,29 +118,36 @@ class modal_Activities {
     };
 
     // make activity list
-    make_activity_list(actlists) {
+    makeActivityList(actlists) {
         if (actlists.length > 1) {
-            let html = "<ul class='me-0 ps-4'>"
+            let html = "<div class='list-group mb-2'>"
             for (let act of actlists) {
-                html += `<li><span class="pointer" onclick="document.getElementById('${act.id.replace('/', '')}').scrollIntoView({behavior: 'smooth'})">${act.title}<span></li>`;
+                html += `<a href="#" class="list-group-item list-group-item-action" onclick="modalActs.moveTo('${act.id.replace('/', '')}')">${act.title}</a>`;
             }
-            return html + "</ul>"
+            return html + "</div>"
         }
         return ""
     }
 
+    // move linkto
+    moveTo(id) {
+        document.getElementById(id).scrollIntoView({ behavior: 'smooth' })
+    }
+
     // edit activity
-    edit(params) {			// p {id: undefined時はnew}
-        let title = glot.get(params.id === void 0 ? "act_add" : "act_edit");
-        let html = "", act = Conf.activities;
-        let data = params.id === void 0 ? { osmid: cMapMaker.open_osmid } : poiCont.get_actid(params.id);
+    // params {id: undefined時はnew, form: フォーム名、空白時は一番上を自動取得}
+    edit(params = {}) {
+        let title = glot.get(params.id === void 0 ? "act_add" : "act_edit")
+        let html = "", act = Conf.activities
+        let data = params.id === void 0 ? { osmid: cMapMaker.open_osmid } : poiCont.get_actid(params.id)
+        let fname = params.form == undefined ? Object.keys(Conf.activities)[0] : params.form
 
         html = "<div class='container'>";
-        Object.keys(act[params.form].form).forEach(key => {
+        Object.keys(act[fname].form).forEach(key => {
             let akey = "act_" + key;
             html += "<div class='row mb-1 align-items-center'>";
-            let defvalue = data[act[params.form].form[key].gsheet] || "";
-            let form = act[params.form].form[key];
+            let defvalue = data[act[fname].form[key].gsheet] || "";
+            let form = act[fname].form[key];
             switch (form.type) {
                 case "date":
                     html += `<div class='col-2 p-1'>${glot.get(`${form.glot}`)}</div>`;
@@ -194,16 +203,16 @@ class modal_Activities {
         winCont.modal_progress(0);
         winCont.modal_open({
             "title": title, "message": html, "mode": "yes,no", "menu": true,
-            "callback_no": () => { winCont.modal_close() }, "callback_yes": () => {
+            "callback_no": () => { winCont.closeModal() }, "callback_yes": () => {
                 winCont.modal_progress(0);
                 let userid = document.getElementById("act_userid").value;
                 let passwd = document.getElementById("act_passwd").value;
-                if (!modal_activities.busy && userid !== "" && passwd !== "") {
+                if (!modalActs.busy && userid !== "" && passwd !== "") {
                     winCont.modal_progress(10);
-                    modal_activities.busy = true;
+                    modalActs.busy = true;
                     let senddata = { "id": act_id.value, "osmid": act_osmid.value };
-                    Object.keys(act[params.form].form).forEach(key => {
-                        let field = act[params.form].form[key];
+                    Object.keys(act[fname].form).forEach(key => {
+                        let field = act[fname].form[key];
                         if (field.gsheet !== "" && field.gsheet !== undefined) senddata[field.gsheet] = document.getElementById("act_" + key).value
                     });
                     gSheet.get_salt(Conf.google.AppScript, userid).then((e) => {
@@ -213,27 +222,27 @@ class modal_Activities {
                     }).then((hashpw) => {
                         winCont.modal_progress(70);
                         console.log("hashpw: " + hashpw);
-                        return gSheet.set(Conf.google.AppScript, senddata, params.form, userid, hashpw);
+                        return gSheet.set(Conf.google.AppScript, senddata, fname, userid, hashpw);
                     }).then((e) => {
                         winCont.modal_progress(100);
                         if (e.status.indexOf("ok") > -1) {
                             console.log("save: ok");
-                            winCont.modal_close();
+                            winCont.closeModal();
                             gSheet.get(Conf.google.AppScript).then(jsonp => {
                                 poiCont.setActdata(jsonp);
                                 let targets = Conf.listTable.target == "targets" ? [listTable.getSelCategory()] : ["-"];
                                 cMapMaker.viewArea(targets);	// in targets
                                 cMapMaker.viewPoi(targets);	// in targets
-                                modal_activities.busy = false;
+                                modalActs.busy = false;
                             });
                         } else {
                             console.log("save: ng");
                             alert(glot.get("act_error"));
-                            modal_activities.busy = false;
+                            modalActs.busy = false;
                         }
                         //}).catch(() => {
                         //    winCont.modal_progress(0);
-                        //    modal_activities.busy = false;
+                        //    modalActs.busy = false;
                     });
                 } else if (userid == "" || passwd == "") {
                     alert(glot.get("act_error"));

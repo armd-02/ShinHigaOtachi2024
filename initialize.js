@@ -10,7 +10,7 @@ const FILES = [
 	`./data/marker.jsonc`, `./data/category-${LANG}.jsonc`, `data/listtable-${LANG}.jsonc`,
 	'./data/overpass-system.jsonc', `./data/overpass-custom.jsonc`, `./data/glot-custom.jsonc`, `data/glot-system.jsonc`];
 const glot = new Glottologist();
-var modal_activities = new modal_Activities();
+var modalActs = new modal_Activities();
 var modal_wikipedia = new modal_Wikipedia();
 var modal_osmbasic = new modal_OSMbasic();
 var basic = new Basic();
@@ -28,18 +28,34 @@ console.log("Welcome to Community Map Maker.");
 console.log("initialize: Start.");
 window.addEventListener("DOMContentLoaded", function () {
 	const fetchUrls = FILES.map(url => fetch(url).then(res => res.text()));
+	const setUrlParams = function () {	// URLから引数を取得して返す関数
+		let keyValue = {}
+		let search = location.search.replace(/[?&]fbclid.*/, '').replace(/%2F/g, '/').slice(1)  // facebook対策
+		search = search.slice(-1) == "/" ? search.slice(0, -1) : search					        // facebook対策(/が挿入される)
+		let params = search.split('&')													        // -= -> / and split param
+		history.replaceState('', '', location.pathname + "?" + search + location.hash)			// fixURL
+		for (const param of params) {
+			let delimiter = param.includes('=') ? '=' : '/'
+			let keyv = param.split(delimiter)
+			keyValue[keyv[0]] = keyv[1]
+		}
+		return keyValue
+	}
+
 	Promise.all(fetchUrls).then(texts => {
 		let basehtml = texts[0];											// Get Menu HTML
 		for (let i = 1; i <= 7; i++) {
-			Conf = Object.assign(Conf, JSON5.parse(texts[i]));
-		};
-		Conf.osm = Object.assign(Conf.osm, JSON5.parse(texts[8]).osm);
-		Conf.category_keys = Object.keys(Conf.category);					// Make Conf.category_keys
-		Conf.category_subkeys = Object.keys(Conf.category_sub);				// Make Conf.category_subkeys
-		glot.data = Object.assign(glot.data, JSON5.parse(texts[9]));		// import glot data
-		glot.data = Object.assign(glot.data, JSON5.parse(texts[10]));		// import glot data
-		window.onresize = winCont.window_resize;    						// 画面サイズに合わせたコンテンツ表示切り替え
-		document.title = glot.get("site_title");							// Title
+			Conf = Object.assign(Conf, JSON5.parse(texts[i]))
+		}
+		Conf.osm = Object.assign(Conf.osm, JSON5.parse(texts[8]).osm)
+		Conf.category_keys = Object.keys(Conf.category)						// Make Conf.category_keys
+		Conf.category_subkeys = Object.keys(Conf.category_sub)				// Make Conf.category_subkeys
+		glot.data = Object.assign(glot.data, JSON5.parse(texts[9]))			// import glot data
+		glot.data = Object.assign(glot.data, JSON5.parse(texts[10]))		// import glot data
+		window.onresize = winCont.window_resize	    						// 画面サイズに合わせたコンテンツ表示切り替え
+		document.title = glot.get("site_title")								// Title
+		let UrlParams = setUrlParams()
+		if (UrlParams.edit) Conf.etc["editMode"] = true
 		winCont.splash(true);
 		listTable.init();
 		winCont.window_resize();											// Set Window Size(mapidのサイズ指定が目的)
@@ -74,35 +90,20 @@ window.addEventListener("DOMContentLoaded", function () {
 				let eventMoveMap = cMapMaker.eventMoveMap.bind(cMapMaker)
 				eventMoveMap().then(() => {
 					winCont.splash(false)
-					if (location.search !== "") {    													// 引数がある場合
-						let search = location.search.replace(/[?&]fbclid.*/, '').replace(/%2F/g, '/').slice(1)  	// facebook対策
-						//search = search.replace('-', '/').replace('=', '/').slice(1)
-						search = search.slice(-1) == "/" ? search.slice(0, -1) : search					// facebook対策(/が挿入される)
-						let params = search.split('&')													// -= -> / and split param
-						history.replaceState('', '', location.pathname + "?" + search + location.hash)
-						for (const param of params) {
-							let delimiter = param.includes('=') ? '=' : '/'
-							let keyv = param.split(delimiter)
-							switch (keyv[0]) {
-								case "edit":
-
-									break
-								case "category":
-									if (Conf.selectItem.menu == "") {	// listTableリンク時
-										listTable.selectCategory(keyv[1])
-									} else {						// 手動時は直接指定
-										list_category.value = keyv[1]
-									}
-									cMapMaker.eventChangeCategory()
-									break
-								case "node":
-								case "way":
-								case "relation":
-									let subparam = param.split('.')					// split child elements(.)
-									cMapMaker.viewDetail(subparam[0], subparam[1])
-									break
-							}
+					if (UrlParams.category) {
+						if (Conf.selectItem.menu == "") {		// listTableリンク時
+							listTable.selectCategory(UrlParams.category)
+						} else {								// 手動時は直接指定
+							list_category.value = UrlParams.category
 						}
+						cMapMaker.eventChangeCategory()
+						delete UrlParams.category
+					}
+					if (UrlParams.node || UrlParams.way || UrlParams.relation) {
+						let keyv = Object.entries(UrlParams).find(([key, value]) => value !== undefined);
+						let param = keyv[0] + "/" + keyv[1]
+						let subparam = param.split('.')					// split child elements(.)
+						cMapMaker.viewDetail(subparam[0], subparam[1])
 					}
 					cMapMaker.addEvents()
 				})

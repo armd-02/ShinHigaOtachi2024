@@ -37,6 +37,7 @@ h5 {
 
 a {
     overflow-wrap: break-word;
+    color: rgb(0 117 58);
 }
 
 #container {
@@ -293,7 +294,8 @@ tr.selected td {
     bottom: 0px;
 }
 
-.card-header, .card-body {
+.card-header,
+.card-body {
     padding: 0px !important;
 }
 
