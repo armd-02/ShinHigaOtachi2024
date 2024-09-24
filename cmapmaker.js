@@ -217,7 +217,7 @@ class CMapMaker {
 
 		// append activity
 		let catname = listTable.getSelCategory() !== "-" ? `&category=${listTable.getSelCategory()}` : "";
-		let actlists = poiCont.get_actlist(osmid);
+		let actlists = poiCont.getActlistByOsmid(osmid);
 		history.replaceState('', '', location.pathname + "?" + osmid + (!openid ? "" : "." + openid) + catname + location.hash);
 		if (actlists.length > 0) {	// アクティビティ有り
 			message += modalActs.make(actlists);

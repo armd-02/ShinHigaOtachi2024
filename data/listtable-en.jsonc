@@ -14,7 +14,8 @@
                 },
                 {
                     "id": "name",
-                    "name": "name"
+                    "name": "name",
+                    "hidden": true
                 },
                 {
                     "id": "title",
@@ -24,7 +25,7 @@
             // #parent.tag名:親地物(敷地)の指定したタグ / その他:tag名
             "poi_fields": [
                 "id",
-                "#category",
+                "category",
                 "name",
                 "#category"
             ],

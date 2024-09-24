@@ -83,7 +83,8 @@
             "animal": "動物"
         },
         "barrier": {
-            "gate": "門"
+            "gate": "門",
+            "hedge": "生垣"
         },
         "bridge": {
             "yes": "橋"
@@ -204,6 +205,7 @@
             "peak": "頂上",
             "stone": "石",
             "tree": "樹木",
+            "tree_row": "並木",
             "water": "池",
             "wetland": "湿地帯",
             "wood": "森"

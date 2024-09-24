@@ -84,7 +84,8 @@
                 "animal": "zoo.svg"
             },
             "barrier": {
-                "gate": "gate.svg"
+                "gate": "gate.svg",
+                "hedge": "hedge.svg"
             },
             "bridge": {
                 "yes": "bridge.svg"
@@ -204,6 +205,7 @@
             "natural": {
                 "peak": "mountain.svg",
                 "tree": "park.svg",
+                "tree_row": "tree_row.svg",
                 "water": "water.svg",
                 "wetland": "wetland.svg",
                 "wood": "park-alt1.svg"

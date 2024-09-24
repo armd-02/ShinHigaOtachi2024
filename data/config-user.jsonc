@@ -8,15 +8,14 @@
         ],
         "viewPitch": 30,
         "maxPitch": 60,
-        "maxbounds": "",
-        "_maxBounds": [
+        "maxBounds": [
             [
-                135.30000,
-                34.54000
+                135.40000,
+                34.71000
             ],
             [
-                135.80000,
-                34.80000
+                135.60000,
+                34.77000
             ]
         ],
         "initZoom": 16,
@@ -54,8 +53,8 @@
     },
     "listTable": {
         "category": "activity", // カテゴリ選択 / activity:アクティビティリスト / tags:タグ
-        "target": "tags", // target名:overpass名を表示 / activity:google sheetsを表示 / tags:osm poi種別名を表示
-        "allActs": true, // true: 全てのactivityを常に表示 / false: 画面内のActivityのみ表示
+        "target": "activity",   // target名:overpass名を表示 / activity:google sheetsを表示 / tags:osm poi種別名を表示
+        "allActs": true,        // true: 全てのactivityを常に表示 / false: 画面内のActivityのみ表示
         "playback": {
             "view": false,
             "zoomLevel": 15,
@@ -69,8 +68,8 @@
         "targetName": "activity"
     },
     "static": {
-        "mode": false,
-        "osmjson": ""
+        "mode": true,
+        "osmjson": "./data/ShinHigaStores2024.json"
     },
     "wikipedia": {
         "marker": "wikipedia.svg",
@@ -88,11 +87,13 @@
                 "linkto": "javascript:cMapMaker.about()",
                 "divider": false
             },
+            /*
             {
                 "glot-model": "owner",
                 "linkto": "https://k-sakanoshita.medium.com/1173cab3fd72",
                 "divider": true
             },
+            */
             {
                 "glot-model": "licence_title",
                 "linkto": "javascript:cMapMaker.licence()",
@@ -106,11 +107,13 @@
         ],
         // 詳細表示のハンバーガーメニュー
         "modal": [
+            /*
             {
                 "glot-model": "act_add",
                 "linkto": "javascript:modalActs.edit()",
                 "divider": false
             },
+            */
             {
                 "glot-model": "osm_open",
                 "linkto": "javascript:winCont.osm_open(cMapMaker.open_osmid)",

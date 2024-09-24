@@ -83,7 +83,8 @@
             "animal": "animal"
         },
         "barrier": {
-            "gate": "barrier"
+            "gate": "barrier",
+            "hedge": "hedge"
         },
         "bridge": {
             "yes": "bridge"
@@ -204,6 +205,7 @@
             "peak": "peak",
             "stone": "stone",
             "tree": "tree",
+            "tree_row": "tree row",
             "water": "water",
             "wetland": "wetland",
             "wood": "wood"
