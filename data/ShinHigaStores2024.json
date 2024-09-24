@@ -1,8 +1,8 @@
 {
   "version": 0.6,
-  "generator": "Overpass API 0.7.57.1 74a55df1",
+  "generator": "Overpass API 0.7.62.2 58ef4056",
   "osm3s": {
-    "timestamp_osm_base": "2024-09-24T04:33:35Z",
+    "timestamp_osm_base": "2024-09-24T06:10:45Z",
     "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL."
   },
   "elements": [
@@ -869,6 +869,30 @@
     "check_date": "2024-08-28",
     "fixme:type": "カフェ",
     "name": "RockAway Cafe"
+  }
+},
+{
+  "type": "node",
+  "id": 12141177241,
+  "lat": 34.7441325,
+  "lon": 135.4924068,
+  "timestamp": "2024-09-23T02:22:21Z",
+  "version": 3,
+  "changeset": 156974290,
+  "user": "K_Sakanoshita",
+  "uid": 389520,
+  "tags": {
+    "addr:block_number": "21番",
+    "addr:city": "大阪市",
+    "addr:housenumber": "43号",
+    "addr:neighbourhood": "1丁目",
+    "addr:postcode": "532-0006",
+    "addr:province": "大阪府",
+    "addr:quarter": "西三国",
+    "addr:suburb": "淀川区",
+    "check_date": "2024-08-28",
+    "name": "まごころ不動産 株式会社REAL",
+    "office": "estate_agent"
   }
 },
 {

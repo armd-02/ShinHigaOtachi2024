@@ -18,7 +18,7 @@
                 34.77000
             ]
         ],
-        "initZoom": 16,
+        "initZoom": 15,
         "maxZoom": 23,
         "modalZoom": 19 // モーダルダイアログ表示時のズームサイズ   
     },
@@ -68,7 +68,7 @@
         "targetName": "activity"
     },
     "static": {
-        "mode": true,
+        "mode": false,
         "osmjson": "./data/ShinHigaStores2024.json"
     },
     "wikipedia": {
