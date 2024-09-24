@@ -68,7 +68,7 @@
         "targetName": "activity"
     },
     "static": {
-        "mode": false,
+        "mode": true,
         "osmjson": "./data/ShinHigaStores2024.json"
     },
     "wikipedia": {
