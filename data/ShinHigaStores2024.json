@@ -2,7 +2,7 @@
   "version": 0.6,
   "generator": "Overpass API 0.7.62.2 58ef4056",
   "osm3s": {
-    "timestamp_osm_base": "2024-09-24T06:10:45Z",
+    "timestamp_osm_base": "2024-10-07T10:21:30Z",
     "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL."
   },
   "elements": [
@@ -37,11 +37,11 @@
   "id": 7456946832,
   "lat": 34.7311336,
   "lon": 135.4832988,
-  "timestamp": "2024-09-23T02:03:41Z",
-  "version": 6,
-  "changeset": 156974115,
-  "user": "K_Sakanoshita",
-  "uid": 389520,
+  "timestamp": "2024-10-01T17:14:14Z",
+  "version": 7,
+  "changeset": 157349480,
+  "user": "t_matsukura",
+  "uid": 21292672,
   "tags": {
     "addr:block_number": "4番",
     "addr:city": "大阪市",
@@ -56,8 +56,8 @@
     "contact:instagram": "https://www.instagram.com/elnague2010/",
     "cuisine": "spanish",
     "description": "※事前にご連絡いただけるとスムーズにお渡しできます。 ※UberEatsのご注文は、配送料と手数料が上乗せされます。 ※前日までなら、HPから予約ができます。",
-    "name": "EL NAGUE",
-    "name:ja": "エルナージ",
+    "name": "エルナージ",
+    "name:en": "EL NAGUE",
     "phone": "0663935105",
     "takeaway": "yes",
     "website": "https://el-nague.com/"
@@ -68,9 +68,9 @@
   "id": 9905490617,
   "lat": 34.7334237,
   "lon": 135.4900987,
-  "timestamp": "2024-09-10T12:46:24Z",
-  "version": 2,
-  "changeset": 156438820,
+  "timestamp": "2024-10-01T17:12:55Z",
+  "version": 3,
+  "changeset": 157349398,
   "user": "t_matsukura",
   "uid": 21292672,
   "tags": {
@@ -83,7 +83,7 @@
     "addr:quarter": "西宮原",
     "addr:suburb": "淀川区",
     "amenity": "restaurant",
-    "name": "Caf'e Hi!"
+    "name": "Café Hi!"
   }
 },
 {
@@ -91,11 +91,11 @@
   "id": 10159597169,
   "lat": 34.7484742,
   "lon": 135.4915614,
-  "timestamp": "2024-09-10T07:59:52Z",
-  "version": 3,
-  "changeset": 156426863,
-  "user": "t_matsukura",
-  "uid": 21292672,
+  "timestamp": "2024-09-30T11:44:54Z",
+  "version": 4,
+  "changeset": 157293244,
+  "user": "K_Sakanoshita",
+  "uid": 389520,
   "tags": {
     "addr:block_number": "15番",
     "addr:city": "大阪市",
@@ -106,9 +106,10 @@
     "addr:quarter": "十八条",
     "addr:suburb": "淀川区",
     "amenity": "social_facility",
-    "check_date": "2024-04-11",
+    "check_date": "2024-09-30",
     "name": "ここから100",
     "social_facility": "outreach",
+    "social_facility:for": "senior",
     "website": "https://cocokara100.com/"
   }
 },
@@ -117,11 +118,11 @@
   "id": 10159629410,
   "lat": 34.7443511,
   "lon": 135.4949612,
-  "timestamp": "2024-09-10T08:04:44Z",
-  "version": 2,
-  "changeset": 156427032,
-  "user": "t_matsukura",
-  "uid": 21292672,
+  "timestamp": "2024-09-30T11:38:58Z",
+  "version": 3,
+  "changeset": 157292984,
+  "user": "K_Sakanoshita",
+  "uid": 389520,
   "tags": {
     "addr:block_number": "12番",
     "addr:city": "大阪市",
@@ -133,7 +134,8 @@
     "addr:suburb": "淀川区",
     "amenity": "social_facility",
     "name": "ここコミュ",
-    "operator": "特定非営利活動法人ここから100"
+    "operator": "特定非営利活動法人ここから100",
+    "social_facility": "outreach"
   }
 },
 {
@@ -236,9 +238,9 @@
   "id": 10885708495,
   "lat": 34.7364132,
   "lon": 135.4868469,
-  "timestamp": "2024-09-10T12:50:24Z",
-  "version": 2,
-  "changeset": 156438975,
+  "timestamp": "2024-10-01T17:03:09Z",
+  "version": 3,
+  "changeset": 157348996,
   "user": "t_matsukura",
   "uid": 21292672,
   "tags": {
@@ -250,8 +252,8 @@
     "addr:province": "大阪府",
     "addr:quarter": "三国本町",
     "addr:suburb": "淀川区",
-    "amenity": "fast_food",
     "check_date": "2023-05-11",
+    "craft": "confectionery",
     "cuisine": "cake",
     "name": "CAKE SHOP SUN"
   }
@@ -376,9 +378,9 @@
   "id": 11889023117,
   "lat": 34.7414369,
   "lon": 135.4970813,
-  "timestamp": "2024-09-10T07:53:23Z",
-  "version": 3,
-  "changeset": 156426607,
+  "timestamp": "2024-10-01T16:33:16Z",
+  "version": 4,
+  "changeset": 157347909,
   "user": "t_matsukura",
   "uid": 21292672,
   "tags": {
@@ -390,10 +392,10 @@
     "addr:province": "大阪府",
     "addr:quarter": "東三国",
     "addr:suburb": "淀川区",
-    "beauty": "nails;spa;waxing;hair_removal;eyebrow;foot;skin_care;massage",
+    "beauty": "nails",
     "check_date": "2024-05-08",
     "internet_access": "no",
-    "name": "BeautySalon MAHARO",
+    "name": "Mahalo",
     "name:ja": "ビューティーサロン　マハロ",
     "opening_hours": "11:00-21:00",
     "payment:cash": "yes",
@@ -595,9 +597,9 @@
   "id": 12139720083,
   "lat": 34.7336161,
   "lon": 135.4878840,
-  "timestamp": "2024-09-10T13:07:09Z",
-  "version": 2,
-  "changeset": 156439723,
+  "timestamp": "2024-10-02T03:35:17Z",
+  "version": 4,
+  "changeset": 157362658,
   "user": "t_matsukura",
   "uid": 21292672,
   "tags": {
@@ -611,8 +613,8 @@
     "addr:suburb": "淀川区",
     "check_date": "2024-08-27",
     "clothes": "children",
-    "name": "rukka rukka",
-    "name:ja": "ルッカルッカ",
+    "name": "ルッカルッカ",
+    "name:en": "rukka rukka",
     "shop": "clothes"
   }
 },
@@ -621,9 +623,9 @@
   "id": 12139742478,
   "lat": 34.7352902,
   "lon": 135.4889416,
-  "timestamp": "2024-09-10T13:28:24Z",
-  "version": 2,
-  "changeset": 156440741,
+  "timestamp": "2024-10-01T17:00:41Z",
+  "version": 3,
+  "changeset": 157348915,
   "user": "t_matsukura",
   "uid": 21292672,
   "tags": {
@@ -635,8 +637,8 @@
     "addr:province": "大阪府",
     "addr:quarter": "西宮原",
     "addr:suburb": "淀川区",
-    "amenity": "fast_food",
     "check_date": "2024-08-27",
+    "craft": "confectionery",
     "cuisine": "洋菓子",
     "drive_through": "no",
     "name": "VALOIR",
@@ -801,9 +803,9 @@
   "id": 12141119152,
   "lat": 34.7385805,
   "lon": 135.4847123,
-  "timestamp": "2024-09-10T13:16:51Z",
-  "version": 3,
-  "changeset": 156440167,
+  "timestamp": "2024-10-01T16:55:50Z",
+  "version": 4,
+  "changeset": 157348779,
   "user": "t_matsukura",
   "uid": 21292672,
   "tags": {
@@ -818,7 +820,6 @@
     "check_date": "2024-08-28",
     "fixme:type": "コスメ",
     "name": "ゲキヤスコマチ",
-    "name:ja": "ゲキヤスコマチ",
     "shop": "houseware"
   }
 },
@@ -900,9 +901,9 @@
   "id": 12143279382,
   "lat": 34.7366011,
   "lon": 135.4836383,
-  "timestamp": "2024-09-10T13:46:58Z",
-  "version": 2,
-  "changeset": 156441677,
+  "timestamp": "2024-10-01T17:04:02Z",
+  "version": 3,
+  "changeset": 157349029,
   "user": "t_matsukura",
   "uid": 21292672,
   "tags": {
@@ -915,7 +916,7 @@
     "addr:quarter": "三国本町",
     "addr:suburb": "淀川区",
     "check_date": "2024-08-29",
-    "name": "【姿勢改善×肩こり専門】らくりら",
+    "name": "【姿勢改善×肩こり専門】らくりら 三国店",
     "shop": "massage"
   }
 },
@@ -997,9 +998,9 @@
   "id": 12167450572,
   "lat": 34.7399667,
   "lon": 135.4954424,
-  "timestamp": "2024-09-10T14:22:11Z",
-  "version": 2,
-  "changeset": 156443426,
+  "timestamp": "2024-10-01T16:57:30Z",
+  "version": 3,
+  "changeset": 157348828,
   "user": "t_matsukura",
   "uid": 21292672,
   "tags": {
@@ -1014,17 +1015,17 @@
     "amenity": "restaurant",
     "check_date": "2024-09-10",
     "cuisine": "italian",
-    "name": "Courage"
+    "name": "COURAGE"
   }
 },
 {
   "type": "node",
   "id": 12167450573,
-  "lat": 34.7380641,
-  "lon": 135.4851420,
-  "timestamp": "2024-09-10T13:35:42Z",
-  "version": 2,
-  "changeset": 156441065,
+  "lat": 34.7380625,
+  "lon": 135.4851760,
+  "timestamp": "2024-10-01T16:52:45Z",
+  "version": 3,
+  "changeset": 157348671,
   "user": "t_matsukura",
   "uid": 21292672,
   "tags": {
@@ -1037,9 +1038,8 @@
     "addr:quarter": "三国本町",
     "addr:suburb": "淀川区",
     "check_date": "2024-09-10",
-    "name": "Salon de Prima",
-    "name:ja": "サロンドプリマ",
-    "shop": "beauty"
+    "name": "Salon de Prima サロンドプリマ",
+    "shop": "massage"
   }
 },
 {
@@ -1047,9 +1047,9 @@
   "id": 12167557731,
   "lat": 34.7417886,
   "lon": 135.4960585,
-  "timestamp": "2024-09-10T07:19:19Z",
-  "version": 1,
-  "changeset": 156425458,
+  "timestamp": "2024-10-01T16:53:34Z",
+  "version": 2,
+  "changeset": 157348709,
   "user": "t_matsukura",
   "uid": 21292672,
   "tags": {
@@ -1062,7 +1062,7 @@
     "addr:quarter": "東三国",
     "addr:suburb": "淀川区",
     "name": "ポーラザビューティ東三国店",
-    "shop": "beauty"
+    "shop": "massage"
   }
 },
 {
@@ -1070,9 +1070,9 @@
   "id": 12167574868,
   "lat": 34.7400474,
   "lon": 135.4924124,
-  "timestamp": "2024-09-10T07:33:13Z",
-  "version": 1,
-  "changeset": 156425865,
+  "timestamp": "2024-10-01T17:16:19Z",
+  "version": 3,
+  "changeset": 157349559,
   "user": "t_matsukura",
   "uid": 21292672,
   "tags": {
@@ -1084,11 +1084,11 @@
     "addr:province": "大阪府",
     "addr:quarter": "西三国",
     "addr:suburb": "淀川区",
-    "amenity": "fast_food",
+    "craft": "confectionery",
     "cuisine": "cake",
     "drive_through": "no",
-    "name": "patisserie gu-te",
-    "name:ja": "パティスリーグーテ"
+    "name": "パティスリー グーテ",
+    "name:en": "patisserie gu-te"
   }
 },
 {
@@ -1144,9 +1144,9 @@
   "id": 12168098285,
   "lat": 34.7416783,
   "lon": 135.4921231,
-  "timestamp": "2024-09-10T12:55:15Z",
-  "version": 1,
-  "changeset": 156439214,
+  "timestamp": "2024-10-01T16:42:27Z",
+  "version": 2,
+  "changeset": 157348272,
   "user": "t_matsukura",
   "uid": 21292672,
   "tags": {
@@ -1158,7 +1158,7 @@
     "addr:province": "大阪府",
     "addr:quarter": "西三国",
     "addr:suburb": "淀川区",
-    "name": "SOURIRE",
+    "name": "Sourile Hair (SOURIRE)",
     "shop": "hairdresser"
   }
 },
@@ -1316,11 +1316,11 @@
 {
   "type": "way",
   "id": 272227742,
-  "timestamp": "2023-12-31T07:43:48Z",
-  "version": 3,
-  "changeset": 145722210,
-  "user": "okadatsuneo",
-  "uid": 10163840,
+  "timestamp": "2024-10-01T17:07:39Z",
+  "version": 4,
+  "changeset": 157349175,
+  "user": "t_matsukura",
+  "uid": 21292672,
   "nodes": [
     2771832435,
     2771832437,
@@ -1345,7 +1345,7 @@
   ],
   "tags": {
     "amenity": "college",
-    "name": "大阪文化服装学院",
+    "name": "学校法人ミクニ学園 大阪文化服装学院",
     "source": "Bing,2011-4"
   }
 },
