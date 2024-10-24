@@ -57,8 +57,7 @@
 		"download": false
 	},
 	"google": {
-		"Analytics": "",
-		"AppScript": "https://script.google.com/macros/s/AKfycbxNPBAaQ9ADErqlJgq76AsR2oveJptezcyt-SJf5yLbdbyR_ZgEwld6iyG_D5a6Y93Q/exec",
+		"appScript": "https://script.google.com/macros/s/AKfycbxNPBAaQ9ADErqlJgq76AsR2oveJptezcyt-SJf5yLbdbyR_ZgEwld6iyG_D5a6Y93Q/exec",
 		"targetName": "activity"
 	},
 	"static": {

@@ -161,15 +161,15 @@ class CMapMaker {
 		};
 	};
 
-	viewImage(imgdom) {
-		console.log("viewImage: Start.");
+	viewImageList(imgdom) {
+		console.log("viewImageList: Start.");
 		let osmid = imgdom.getAttribute("osmid");
 		let poi = poiCont.get_osmid(osmid);
 		let zoomlv = Math.max(mapLibre.getZoom(true), Conf.map.modalZoom);
 		if (poi !== undefined) {
 			mapLibre.flyTo(poi.lnglat, zoomlv);
 			cMapMaker.viewDetail(osmid);
-			console.log("viewImage: View OK.");
+			console.log("viewImageList: View OK.");
 		}
 	}
 
